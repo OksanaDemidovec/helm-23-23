@@ -1,3 +1,35 @@
 apiVersion: v1
-entries: {}
-generated: "2023-04-19T13:21:46.311498313Z"
+entries:
+  first-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-04-24T04:19:20.529295289Z"
+    description: A Helm chart for Kubernetes
+    digest: eb50a89ada638b3f35f56eb027197482cf27a41741422b037755d920f300ab6b
+    name: first-app
+    type: application
+    urls:
+    - https://oksanademidovec.github.io/helm-23-23/first-app/first-app-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-04-24T04:19:20.52691953Z"
+    description: A Helm chart for Kubernetes
+    digest: 7c645dbb81f31f2424f7b5394de4c18d7ba0355be818f8282893260f8db4b976
+    name: first-app
+    type: application
+    urls:
+    - https://oksanademidovec.github.io/helm-23-23/first-app/first-app-0.1.0.tgz
+    version: 0.1.0
+  jenkins:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-04-24T04:19:20.524848339Z"
+    description: A Helm chart for Kubernetes
+    digest: cd70309dd93b0a9a413d26dd6b0277da1e45afdc6cb4b20e49be5908ab30ccb2
+    name: jenkins
+    type: application
+    urls:
+    - https://oksanademidovec.github.io/helm-23-23/jenkins-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-04-24T04:19:20.488381263Z"
