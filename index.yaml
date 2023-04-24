@@ -9,7 +9,7 @@ entries:
     name: first-app
     type: application
     urls:
-    - https://oksanademidovec.github.io/helm-23-23/first-app/first-app-0.2.0.tgz
+    - https://oksanademidovec.github.io/helm-23-23/helm-releases/first-app-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
@@ -19,7 +19,7 @@ entries:
     name: first-app
     type: application
     urls:
-    - https://oksanademidovec.github.io/helm-23-23/first-app/first-app-0.1.0.tgz
+    - https://oksanademidovec.github.io/helm-23-23/helm-releases/first-app-0.1.0.tgz
     version: 0.1.0
   jenkins:
   - apiVersion: v2
@@ -30,6 +30,6 @@ entries:
     name: jenkins
     type: application
     urls:
-    - https://oksanademidovec.github.io/helm-23-23/jenkins-0.1.0.tgz
+    - https://oksanademidovec.github.io/helm-23-23/helm-releases/jenkins-0.1.0.tgz
     version: 0.1.0
 generated: "2023-04-24T04:19:20.488381263Z"
