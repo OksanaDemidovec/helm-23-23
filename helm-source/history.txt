@@ -1,0 +1,490 @@
+    1  sudo nano /etc/netplan/00-installer-config.yaml 
+    2  netplan reboot
+    3  netplan apply
+    4  sudo nano /etc/netplan/00-installer-config.yaml 
+    5  netplan apply
+    6  sudo nano /etc/netplan/00-installer-config.yaml 
+    7  netplan apply
+    8  sudo nano /etc/netplan/00-installer-config.yaml 
+    9  netplan apply
+   10  sudo netplan apply
+   11  ip addr show
+   12  sudo nano /etc/netplan/00-installer-config.yaml 
+   13  sudo netplan apply
+   14  ip addr show
+   15  sudo reboot
+   16  ip addr show
+   17  ping 10.0.2.15
+   18  sudo nano /etc/netplan/00-installer-config.yaml 
+   19  sudo netplan apply
+   20  ip addr show
+   21  sudo reboot
+   22  ip addr show
+   23  sudo nano /etc/netplan/00-installer-config.yaml 
+   24  ping 8.8.88
+   25  ping 8.8.8.8
+   26  sudo nano /etc/netplan/00-installer-config.yaml 
+   27  sudo netplan apply
+   28  ping 8.8.8.8
+   29  sudo nano /etc/netplan/00-installer-config.yaml 
+   30  sudo netplan apply
+   31  ping 8.8.8.8
+   32  sudo nano /etc/netplan/00-installer-config.yaml 
+   33  sudo netplan apply
+   34  ping 8.8.8.8
+   35  sudo nano /etc/netplan/00-installer-config.yaml 
+   36  sudo netplan apply
+   37  ping 8.8.8.8
+   38  ip addr show
+   39  ping 10.0.2.15
+   40  ping 10.0.2.17
+   41  ping 8.8.8.8
+   42  sudo nano /etc/netplan/00-installer-config.yaml 
+   43  sudo netplan apply
+   44  ping 8.8.8.8
+   45  ping 10.0.2.15
+   46  ip addr show
+   47  sudo dhclient -r
+   48  ip addr show
+   49  sudo dhclient enp0s3
+   50  sudo dhclient enp0s8
+   51  ip addr show
+   52  sudo dhclient -r
+   53  sudo dhclient enp0s3
+   54  sudo dhclient enp0s8
+   55  ip addr show
+   56  ping 10.0.2.17
+   57  mkdir DevOps
+   58  cd DevOps/
+   59  sudo apt update
+   60  sudo apt upgrade
+   61  sudo git install
+   62  sudo apt install git
+   63  df -h
+   64  ls -la
+   65  git config --global add user.name 'OksanaDemidovec'
+   66  git config --global --add user.name 'OksanaDemidovec'
+   67  git config --global --add user.email 'nces.oda@gmail.com'
+   68  git remote origin-github git@github.com:OksanaDemidovec/sa.it-academy.by.git
+   69  sudo git remote origin-github git@github.com:OksanaDemidovec/sa.it-academy.by.git
+   70  git config -l
+   71  ssh-keygen
+   72  cat ~/.ssh/id_rsa.pub 
+   73  git fetch git@github.com:OksanaDemidovec/sa.it-academy.by.git
+   74  cd DevOps/
+   75  git init
+   76  git fetch git@github.com:OksanaDemidovec/sa.it-academy.by.git
+   77  ls-la
+   78  ls -la
+   79  git fetch git@github.com:OksanaDemidovec/sa.it-academy.by.git
+   80  git pull git@github.com:OksanaDemidovec/sa.it-academy.by.git
+   81  ls -la
+   82  git branch 
+   83  git remote origin-github git@github.com:OksanaDemidovec/sa.it-academy.by.git
+   84  git remote add origin-github git@github.com:OksanaDemidovec/sa.it-academy.by.git
+   85  git config -l
+   86  git fetch origin-github 
+   87  ls -la
+   88  git pull md-sa2-23-23 origin-github
+   89  git pull origin-github md-sa2-23-23
+   90  ls -la
+   91  git status
+   92  git branch
+   93  git checkout -b md-sa2-23-23 
+   94  git status
+   95  ls -la
+   96  cd Oksana_Demidovec/
+   97  ls -la
+   98  cd 09.Kubernetes/
+   99  ls -la
+  100  cd ..
+  101  git add 09.Kubernetes/git commit -m "09.Kubernetes" -t "09.Kubernetes"
+  102  git push origin-github 
+  103  git status
+  104  git add 09.Kubernetes
+  105  git commit -m "09.Kubernetes" -t "09.Kubernetes"
+  106  git push origin-github 
+  107  mkdir 10.Kubernetes.Install
+  108  cd 10
+  109  cd 10.Kubernetes.Install/
+  110  go version
+  111  ls -la
+  112  ls -la /usr/local/go
+  113  sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
+  114  ssh root@192.168.203.5 -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510"
+  115  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+  116  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  117  kubectl version
+  118  ls -la
+  119  cat kubectl 
+  120  cd ~
+  121  ls -la
+  122  kubectl version
+  123  mkdir ~/.kube
+  124  nano ~/.kube/config
+  125  scp -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" root@192.168.203.20:/etc/rancher/k3s/k3s.yaml ~/.kube/config
+  126  ssh -o "PasswordAuthentication=no" -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" root@192.168.203.5
+  127  scp -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" root@192.168.203.5:/etc/rancher/k3s/k3s.yaml ~/.kube/config
+  128  ssh -o "ProxyCommand ssh -W %h:%p jump_sa@178.124.206.53 -p 22510" -o "PasswordAuthentication=no" root@192.168.203.5
+  129  ssh-copy-id  -o "ProxyCommand ssh -W %h:%p jump_sa@178.124.206.53 -p 22510" root@192.168.203.5
+  130  ssh jump_sa@178.124.206.53 -p 22510
+  131  s -l /usr/local/go
+  132  ls -l /usr/local/go
+  133  sudo ls -l /usr/local/go
+  134  wget https://go.dev/dl/go1.20.2.linux-amd64.tar.gz
+  135  sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.20.2.linux-amd64.tar.gz
+  136  go vrersion
+  137  sudo ls -l /usr/local/go
+  138  go vrersion
+  139  sudo go vrersion
+  140  sudo reboot
+  141  export PATH=$PATH:/usr/local/go/bin
+  142  cd DevOps/
+  143  cd Oksana_Demidovec/10.Kubernetes.Install/
+  144  ls -la
+  145  rm kubectl /~
+  146  rm kubectl /~/kubectl
+  147  rm kubectl ~/kubectl
+  148  rm kubectl ~/
+  149  ls -la
+  150  ls -la ~
+  151  ls -l /tmp/k3s/
+  152  kubectl version
+  153  kubectl get pods -A
+  154  kubectl get pods -A --context default
+  155  wget https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_amd64.tar.gz
+  156  sudo tar -C /usr/local -xzf k9s_Linux_amd64.tar.gz
+  157  k9s
+  158  sudo k9s
+  159  chmod +x kubectl
+  160  mkdir -p ~/.local/bin
+  161  mv ./kubectl ~/.local/bin/kubectl
+  162  sudo mv ./kubectl ~/.local/bin/kubectl
+  163  cd ~/.local/bin
+  164  sudo chmod +x kubectl
+  165  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  166  kubectl version
+  167  cd ~
+  168  ls -la
+  169  cd DevOps/Oksana_Demidovec/10.Kubernetes.Install/
+  170  ls -la
+  171  mv k9s_Linux_amd64.tar.gz
+  172  mv k9s_Linux_amd64.tar.gz ~/
+  173  cd ~
+  174  sudo apt-get remove kubectl
+  175  kubectl version
+  176  sudo snap remove kubectl
+  177  sudo remove -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  178  sudo uninstall -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  179  ls -la
+  180  echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+  181  sudo echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+  182  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  183  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+  184  curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+  185  echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+  186  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  187  cd ~/.local/bin
+  188  chmod +x kubectl
+  189  cd ~
+  190  chmod +x kubectl
+  191  mkdir -p ~/.local/bin
+  192  mv ./kubectl ~/.local/bin/kubectl
+  193  kubectl version --client
+  194  k9s
+  195  k9s version
+  196  ls -la
+  197  sudo tar -C /usr/local -xzf k9s_Linux_amd64.tar.gz
+  198  k9s
+  199  sudo tar -C /usr/local/bin -xzf k9s_Linux_amd64.tar.gz
+  200  k9s
+  201  kubectl logs metrics-server-5f9f776df5-4wxtt
+  202  kubectl exec -it ubuntu -- bash
+  203  nano /.kube/config
+  204  cd .kube/
+  205  ls -la
+  206  nano config 
+  207  ssh -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" -L 6443:127.0.0.1:6443 root@192.168.203.5 -f -N
+  208  kubectl get pods -A
+  209  cd ~/DevOps/Oksana_Demidovec/10.Kubernetes.Install/
+  210  go version > local.log
+  211  k9s version >> local.log
+  212  kubectl get pods -A
+  213  ssh -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" -L 6443:127.0.0.1:6443 root@192.168.203.5 -f -N
+  214  kubectl get pods -A
+  215  kubectl get
+  216  kubectl get -h
+  217  kubectl get -f
+  218  kubectl get pods 0f
+  219  kubectl get pods -f
+  220  kubectl get pods
+  221  kubectl get pods -A
+  222  ssh-copy-id jump_sa@178.124.206.53
+  223  ssh-copy-id -p 22510 jump_sa@178.124.206.53
+  224  ssh root@192.168.203.5  -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510"
+  225  ssh-copy-id root@192.168.203.5 -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510"
+  226  ssh -A jump_sa@178.124.206.53 -p 22510 ssh root@192.168.203.5
+  227  ssh -A -p 22510 jump_sa@178.124.206.53  ssh root@192.168.203.5
+  228  ssh -A -p 22510 jump_sa@178.124.206.53  ssh -p 22 root@192.168.203.5
+  229  ssh -h
+  230  cat ~/.kube/config
+  231  $(kubectl get pods -n $K8S_NAMESPACE | awk '{if ($3 != "Running") print $1}'
+  232  $(kubectl get pods -n "kube-system" | awk '{if ($3 != "Running") print $1}'
+  233  kubectl get pods -n "kube-system" | print $1}'
+  234  kubectl get pods -n "kube-system" | print $1
+  235  sudo apt install mailcap
+  236  kubectl get pods -n "kube-system" | print $1
+  237  kubectl get pods -n
+  238  kubectl get pods -A
+  239  kubectl get pods -n "kube-system" | print $1
+  240  kubectl get pods -n "kube-system"
+  241  kubectl get pods -n "kube-system" | grep awk '$1'
+  242  kubectl get pods -n "kube-system" | grep '$1'
+  243  kubectl get pods -n "kube-system" | awk '{print $1}'
+  244  kubectl get pods -A | awk '{print $1}'
+  245  kubectl get pods -A | awk '{print $2}'
+  246  ssh root@192.168.203.5  -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510"
+  247  cat ~/.kube/config
+  248  ssh root@192.168.203.5  -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510"
+  249  cat $HOME/.kube/config | base64
+  250  ssh root@192.168.203.5 -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510"
+  251  k9s
+  252  k9s .kube/config 
+  253  cd 
+  254  kubectl get pods -A
+  255  ssh -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" -L 6443:127.0.0.1:6443 root@192.168.203.5 -f -N
+  256  kubectl get pods -A
+  257  л9ы
+  258  k9s
+  259  history > 10.k
+  260  cd DevOps/Oksana_Demidovec/10.Kubernetes.Install/
+  261  kubectl get pods -A > k8s_host.log 
+  262  kubectl version
+  263  kubectl version --short
+  264  go version
+  265  go --version
+  266  export PATH=$PATH:/usr/local/go/bin
+  267  go --version
+  268  go version
+  269  git status
+  270  cd ..
+  271  git add 10.Kubernetes.Install/
+  272  git commit -m "10.Kubernetes.Install" -t "10.Kubernetes.Install"
+  273  git push origin-github 
+  274  git config
+  275  git config -l
+  276  git push git@github.com:OksanaDemidovec/sa.it-academy.by.git
+  277  git push origin-github 
+  278  cd 10.Kubernetes.Install/
+  279  git add README.md 
+  280  git commit -m "10.Kubernetes.Install edit" -t "10.Kubernetes.Install"
+  281  git rebase -i HEAD~2
+  282  git status
+  283  git --onelog
+  284  git log --oneline
+  285  git rebase -i HEAD~1
+  286  git commit --amend
+  287  git log --oneline
+  288  git log b14eb76f
+  289  git push git@github.com:OksanaDemidovec/sa.it-academy.by.git
+  290  git push --force git@github.com:OksanaDemidovec/sa.it-academy.by.git
+  291  mkdir ../11.Kubernetes.Basic_objects
+  292  kubectl get pods -A
+  293  ssh -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" -L 6443:127.0.0.1:6443 root@192.168.203.5 -f -N
+  294  cd ../11.Kubernetes.Basic_objects/
+  295  nano pod_exec.yaml
+  296  kubectl apply -f pod_exec.yaml 
+  297  kubectl get ns
+  298  nano pod_exec.yaml
+  299  kubectl delete -f pod_exec.yaml 
+  300  nano pod_live.yaml
+  301  kubectl apply -f pod_live.yaml 
+  302  kubectl delete -f pod_live.yaml 
+  303  nano deploy_rolling.yaml
+  304  kubectl apply -f deploy_rolling.yaml 
+  305  nano deploy_rolling.yaml 
+  306  kubectl apply -f deploy_rolling.yaml 
+  307  nano deploy_rolling.yaml 
+  308  kubectl delete -f deploy_rolling.yaml 
+  309  kubectl create test
+  310  kubectl create ns test
+  311  kubectl apply -f deploy_rolling.yaml -n test
+  312  kubectl get pods -n test
+  313  kubectl delete ns test
+  314  nano app.yaml
+  315  kubectl apply -f app.yaml 
+  316  kubectl exec -it ubuntu --bash
+  317  kubectl exec -it ubuntu -- bash
+  318  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/baremetal/deploy.yaml
+  319  kubectl exec -it ubuntu -- bash
+  320  ls -la
+  321  kubectl exec -it ubuntu -- bash
+  322  ssh -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" -L 6443:127.0.0.1:6443 root@192.168.203.5 -f -N
+  323  cd ..
+  324  mkdir 12.Kubernetes.Data.Security
+  325  cd 12.Kubernetes.Data.Security/
+  326  nano app.yaml
+  327  kubectl apply -f app.yaml 
+  328  ssh root@192.168.203.5  -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510"
+  329  kubectl apply -f app.yaml 
+  330  cd ../11.Kubernetes.Basic_objects/
+  331  ls -la
+  332  history > 11.web
+  333  kubectl delete -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/baremetal/deploy.yaml
+  334  ip addr show
+  335  ip dhcp -r
+  336  sudo dhclient -r
+  337  sudo dhclient enp0s3
+  338  sudo dhclient enp0s8
+  339  ip addr show
+  340  k9s
+  341  ва -р
+  342  df -h
+  343  top
+  344  k9s
+  345  cd DevOps/Oksana_Demidovec/12.Kubernetes.Data.Security/
+  346  ls -la
+  347  kubectl delete -f app.yaml 
+  348  kubectl apply -f app.yaml 
+  349  nano app.yaml 
+  350  kubectl delete -f app.yaml 
+  351  kubectl apply -f app.yaml 
+  352  cd 11
+  353  cd ../11.Kubernetes.Basic_objects/
+  354  cd ../12.Kubernetes.Data.Security/
+  355  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/baremetal/deploy.yaml
+  356  kubectl delete -f app.yaml 
+  357  kubectl apply -f app.yaml 
+  358  kubectl get pods -A
+  359  kubectl logs webserver-6b84997fd6-wkw6p
+  360  kubectl logs webserver-6b84997fd6-44wcd 
+  361  kubectl apply -f app.yaml 
+  362  kubectl get pods -A
+  363  kubectl apply -f ../11.Kubernetes.Basic_objects/app.yaml 
+  364  kubectl get pods -A
+  365  kubectl exec -it  webserver-6b84997fd6-wkw6p 
+  366  kubectl exec -it  webserver-6b84997fd6-wkw6p -- bash
+  367  kubectl exec -it webserver-6f9f7ff7b5-bkhz5 -- bash
+  368  kubectl exec -it webserver-6f9f7ff7b5-9bss5 -- bash
+  369  kubectl apply -f ../11.Kubernetes.Basic_objects/app.yaml 
+  370  kubectl apply -f app.yaml 
+  371  nano app.yaml 
+  372  kubectl apply -f app.yaml 
+  373  kubectl delete -f app.yaml 
+  374  rm app.yaml 
+  375  nano app.yaml
+  376  kubectl apply -f app.yaml 
+  377  df -h
+  378  ssh root@192.168.203.5  -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510"
+  379  nano app.yaml
+  380  kubectl apply -f app.yaml 
+  381  ssh root@192.168.203.5  -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510"
+  382  nano app.yaml 
+  383  kubectl get pods -A
+  384  kubectl apply -f app.yaml 
+  385  nano app.yaml
+  386  kubectl delete -f app.yaml 
+  387  kubectl apply -f app.yaml 
+  388  ssh root@192.168.203.5  -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510"
+  389  nano nfs-subdir-external.yaml
+  390  kubectl apply -f nfs-subdir-external.yaml 
+  391  nano nfs-subdir-external.yaml
+  392  kubectl apply -f nfs-subdir-external.yaml
+  393  nano nfs-subdir-external.yaml
+  394  kubectl apply -f app.yaml 
+  395  ls -la
+  396  kubectl apply -f app.yaml
+  397  rm app.yaml 
+  398  nano app.yaml
+  399  kubectl apply -f app.yaml 
+  400  kubectl rollout restart webserver
+  401  wget https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.20.2/kubeseal-0.20.2-linux-amd64.tar.gz
+  402  sudo tar -C /usr/local/bin -xzf kubeseal-0.20.2-linux-amd64.tar.gz
+  403  kubeseal
+  404  kubeseal -- мукышщт
+  405  kubeseal -- version
+  406  kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.20.2/controller.yaml
+  407  kubeseal --version
+  408  nano init_secret.yaml
+  409  cat init_secret.yaml | kubeseal --format yaml > sealed_secret.yaml
+  410  sudo get-apy update
+  411  sudo get-apt update
+  412  sudo apt update
+  413  sudo apt upgrade
+  414  go --version
+  415  sudo snap install go 
+  416  sudo snap install go --classic
+  417  go --version
+  418  go version
+  419  cat init_secret.yaml | kubeseal --format yaml > sealed_secret.yaml
+  420  sudo reboot
+  421  cd DevOps/Oksana_Demidovec/11.Kubernetes.Basic_objects/
+  422  cd ../12.Kubernetes.Data.Security/
+  423  ls -la
+  424  kubectl apply -f app.yaml 
+  425  ssh -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" -L 6443:127.0.0.1:6443 root@192.168.203.5 -f -N
+  426  kubectl apply -f app.yaml 
+  427  cat init_secret.yaml | kubeseal --format yaml > sealed_secret.yaml
+  428  kubeseal
+  429  cat init_secret.yaml | kubeseal --format yaml > sealed_secret.yaml
+  430  cat init_secret.yaml --format yaml | kubeseal --format yaml > sealed_secret.yaml
+  431  cat init_secret.yaml
+  432  cd ../11
+  433  cd ../11.Kubernetes.Basic_objects/
+  434  kubectl delete ../12.Kubernetes.Data.Security/app.yaml 
+  435  kubectl delete -f ../12.Kubernetes.Data.Security/app.yaml 
+  436  ssh -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" -L 6443:127.0.0.1:6443 root@192.168.203.5 -f -N
+  437  kubectl apply -f ../12.Kubernetes.Data.Security/app.yaml 
+  438  ssh -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" -L 6443:127.0.0.1:6443 root@192.168.203.5 -f -N
+  439  kubectl apply -f ../12.Kubernetes.Data.Security/app.yaml 
+  440  kubectl get events
+  441  k9s
+  442  ip addr show
+  443  dhcp -r enp0s8
+  444  sudo dhclient -r 
+  445  sudo dhclient
+  446  ip addr show
+  447  ssh -o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53 -p 22510" -L 6443:127.0.0.1:6443 root@192.168.203.5 -f -N
+  448  k9s
+  449  cd Helm/helm-releases/
+  450  helm install first-app m23-23/first-app --version 0.2.0
+  451  sudo helm repo add md23-23 https://oksanademidovec.github.io/helm-23-23/
+  452  sudo helm repo update
+  453  sudo helm search repo md23-23
+  454  sudo helm search repo
+  455  ls -la
+  456  cd ../helm-source/
+  457  ls -la
+  458  cd first-app/
+  459  ls -la
+  460  nano Chart.yaml 
+  461  nano templates/deployment.yaml 
+  462  helm install --dry-run first-app first-app
+  463  sudo helm install --dry-run first-app first-app
+  464  sudo helm install --dry-run first-app
+  465  helm install --dry-run first-app first-app
+  466  helm install --dry-run first-app https://oksanademidovec.github.io/helm-23-23/
+  467  helm install --dry-run https://oksanademidovec.github.io/helm-23-23/ first-app
+  468  helm install --dry-run https://oksanademidovec.github.io/helm-23-23/
+  469  helm install --dry-run --first-app  https://oksanademidovec.github.io/helm-23-23/
+  470  helm install --dry-run --generate-name first-app  https://oksanademidovec.github.io/helm-23-23/
+  471  helm install --dry-run first-app m23-23/first-app
+  472  sudo helm install --dry-run first-app m23-23/first-app
+  473  helm repo -l
+  474  helm repo -h
+  475  helm repo list
+  476  cd ../
+  477  sudo helm install --dry-run first-app m23-23/first-app
+  478  cd ..
+  479  sudo helm install --dry-run first-app m23-23/first-app
+  480  cd ..
+  481  sudo helm install --dry-run first-app m23-23/first-app
+  482  ls -la
+  483  cd Helm/
+  484  ls -la
+  485  sudo helm install --dry-run first-app m23-23/first-app
+  486  sudo helm install --dry-run first-app https://oksanademidovec.github.io/helm-23-23/first-app
+  487  cd helm-source/
+  488  ls -la
+  489  sudo helm install --dry-run first-app m23-23/first-app
+  490  history > history.txt

@@ -38,13 +38,10 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-service:
-  type: ClusterIP
-  ports:
-    - name: http-port
-      containerPort: 8080
-    - name: jnlp-port
-      containerPort: 50000
+masterport: 8080
+slaveport: 50000
+ingressport: 8080
+
 env:
   JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"
   CASC_JENKINS_CONFIG: "/var/jenkins_home/casc_configs/jenkins.yaml"
@@ -70,12 +67,13 @@ ConfigMap:
         server: 192.168.37.105
         path: /mnt/IT-Academy/nfs-data/sa2-23-23/odemidovec/jenkins
 
+ingresshost: helm-jenkins.k8s-5.sa
 ingress:
   enabled: true
   className: ""
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/server-alias: "helm-alias.k8s-5.sa"
+    nginx.ingress.kubernetes.io/server-alias: "helm-jenkins.k8s-5.sa"
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: helm-jenkins.k8s-5.sa

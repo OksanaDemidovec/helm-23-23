@@ -5,15 +5,15 @@ metadata:
   labels:
     {{- include "jenkins.labels" . | nindent 4 }}
 spec:
-  type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.ports.http-port.containerPort  }}
-      targetPort: {{ .Values.ports.http-port.containerPort  }}
+    - name: master
+      port: {{ .Values.masterport  }}
+      targetPort: {{ .Values.masterport  }}
       protocol: TCP
-      name: master
-    - port: {{ .Values.ports.jnlp-port.containerPort }}
-      targetPort: {{ .Values.ports.jnlp-port.containerPort }}
+    - name: slave
+      port: {{ .Values.slaveport }}
+      targetPort: {{ .Values.slaveport }}
       protocol: TCP 
-      name: slave
+      
   selector:
     {{- include "jenkins.selectorLabels" . | nindent 4 }}
