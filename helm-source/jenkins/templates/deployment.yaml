@@ -4,43 +4,24 @@ kind: Namespace
 metadata:
   name: {{ .Values.namespace }}
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "jenkins.fullname" . }}
-  labels:
-    {{- include "jenkins.labels" . | nindent 4 }}
+  name: {{ .Values.name }}
   namespace: {{ .Values.namespace }}
-
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
+  replicas: 1
   selector:
     matchLabels:
-      {{- include "jenkins.selectorLabels" . | nindent 6 }}
+      app:  {{ .Values.name }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
-      annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       labels:
-        {{- include "jenkins.selectorLabels" . | nindent 8 }}
+        app:  {{ .Values.name }}
     spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      serviceAccountName: {{ include "jenkins.serviceAccountName" . }}
-      securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        - name:  {{ .Values.name }}
+          image: "{{ .Values.image.repository }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: JAVA_OPTS
@@ -50,10 +31,8 @@ spec:
           ports:
             - name: http
               containerPort: {{ .Values.masterport }}
-              protocol: TCP
             - name: jnlp
               containerPort: {{ .Values.slaveport }}
-              protocol: TCP            
           securityContext:
             runAsUser: 0
           resources:
@@ -61,20 +40,7 @@ spec:
           volumeMounts:
             {{- toYaml .Values.ConfigMap.volumeMounts | nindent 12 }}
       volumes:
-        {{- toYaml .Values.ConfigMap.volumes | nindent 10 }}
-
-      {{- with .Values.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        {{- toYaml .Values.ConfigMap.volumes | nindent 8 }}
 
 ---
 apiVersion: v1
@@ -113,7 +79,7 @@ data:
               maxRequestsPerHostStr: "32"
               jenkinsUrl: "http://jenkins:8080"
               name: "kubernetes"
-              namespace: {{ .Values.namespace }}
+              namespace: "ci-cd"
               skipTlsVerify: true
         credentials:
           system:
@@ -122,14 +88,12 @@ data:
               - usernamePassword:
                   description: "Githubuser"
                   id: "some_randome"
-                  password: "XXXXXXXXXXX"
+                  password: "PMcAQa3TKS6MnkM"
                   scope: GLOBAL
                   username: "OksanaDemidovec"
         unclassified:
           location:
             adminAddress: "nces.oda@gmail.com"
-            url: "http://{{ .Values.ingresshost }}"
+            url: "http://jenkins.k8s-5.sa/"
           shell:
             shell: "/bin/bash"
-
-

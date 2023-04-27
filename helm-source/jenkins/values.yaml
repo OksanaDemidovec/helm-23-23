@@ -4,6 +4,7 @@
 
 replicaCount: 1
 namespace: ci-cd
+name: jenkins
 
 image:
   repository: jfrog.it-academy.by/public/jenkins-ci:odemidovec
@@ -41,6 +42,7 @@ securityContext: {}
 masterport: 8080
 slaveport: 50000
 ingressport: 8080
+serveralias: "helm-jenkins.k8s-5.sa"
 
 env:
   JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"
